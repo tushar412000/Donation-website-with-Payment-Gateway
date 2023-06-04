@@ -1,0 +1,134 @@
+.jumbotron {
+    background-image: url("21.jpg");
+    background-position: 50px;
+    background-size: cover;
+    color:white;
+    height: 700px;
+  }
+  .btn-donate {
+    
+    background-color: #23A455;
+    border-color: gold;
+    color: white;
+  }
+  .btn-donate:hover {
+    background-color: #e17e21;
+    border-color: #e17e21;
+    color: white;
+  }
+  .card-img-top {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .card {
+    border: none;
+  }
+  
+  .footer {
+    margin-top: 50px;
+    padding: 10px 0;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+  .section {
+        width: 80%;
+        margin: 20px;
+        padding: 20px;
+        background-color: #f2f2f2;
+        text-align: center;
+    }
+
+    .about-us, .gallery, .join-us {
+        margin: 20px;
+        padding: 20px;
+        background-color: #f2f2f2;
+        text-align: center;
+    }
+
+    .about-us h2, .gallery h2, .join-us h2 {
+        margin-top: 0;
+    }
+    #services{
+margin: 34px;
+display: flex;
+}
+
+#services .box{ 
+border: 2px solid gold;
+padding: 34px;
+margin: 2px 55px;
+border-radius: 28px;
+background: #23A455;
+margin-bottom: 20px;
+}
+
+#services .box img{ 
+height: 160px;
+margin: auto;
+display: block;
+}
+
+#services .box p{
+font-family: 'Bree Serif', serif;
+
+} 
+
+/* Contact Section CSS*/
+#contact{
+position: relative;
+}
+
+#contact::before{
+content: "";
+position: absolute;
+width: 100%;
+height: 100%;
+z-index: -1;
+opacity: 0.7;
+
+}
+
+#contact-box{
+display: flex;
+justify-content: center;
+align-items: center;
+padding-bottom: 34px;
+}
+
+#contact-box input, 
+#contact-box textarea{
+width: 100%;
+padding: 0.5rem;
+border-radius: 9px;
+font-size: 1.1rem;
+} 
+
+#contact-box form{
+width: 40%;
+}
+
+#contact-box label{
+font-size: 1.3rem;
+font-family: 'Bree Serif', serif;
+
+}
+.h-primary{
+font-family: 'Bree Serif', serif;
+font-size: 3.8rem;
+padding: 12px;
+}
+.center{
+text-align: center;
+}
+.row {
+display: flex;
+}
+
+.column {
+flex: 33.33%;
+padding: 5px;
+}
+.container{
+color: white;
+}

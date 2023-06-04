@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upkaar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">	
+    <style>
+        .left, .right {
+          float: left;
+          width: 20%; /* The width is 20%, by default */
+        }
+        
+        .main {
+          float: left;
+          width: 60%; /* The width is 60%, by default */
+        }
+        
+        /* Use a media query to add a breakpoint at 800px: */
+        @media screen and (max-width: 800px) {
+          .left, .main, .right {
+            width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+          }
+        }
+        .title {
+      font-family: "Font Name", sans-serif;
+      font-size: 40px;
+      color: black;
+        </style>
+</head>
+  <body style="background-color: black;">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">UPKAAR</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#join-us">Join Us</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="jumbotron text-center">
+      <div class="container">
+        <h1>Donate Now</h1>
+        <p>Help Us Help Others!!</p>
+        <a class="btn btn-primary" onclick="handleDonateClick()" role="button">Donate Now</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img class="card-img-top" src="1.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title">Support Education</h4>
+                <p class="card-text">Help us provide education to children in need by making a donation today.</p>
+                <a href="https://buy.stripe.com/test_eVa4gJ8PG48071C5kl" class="btn btn-primary">Donate Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <img class="card-img-top" src="2.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Fight Hunger</h4>
+                <p class="card-text">Help us provide food to those in need by making a donation today.</p>
+                <a href="https://buy.stripe.com/test_eVa4gJ8PG48071C5kl" class="btn btn-primary">Donate Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <img class="card-img-top" src="3.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Support Healthcare</h4>
+                <p class="card-text">Help us provide medical care to those in need by making a donation today.</p>
+                <a href="https://buy.stripe.com/test_eVa4gJ8PG48071C5kl" class="btn btn-primary">Donate Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <hr>
+        
+        <section id="about-us">
+            <h1 class="h-primary center" >About Us</h1>
+            <div id="services">
+                <div class="box">
+                    <h2 class="h-secondary center">Our Mission</h2>
+                    <p class="justify-content">
+                        "Our mission is to improve the lives of underserved communities by providing access to quality education, nutritious food, and essential healthcare services. We believe that every individual deserves the opportunity to reach their full potential, and we are dedicated to creating a world where no one is held back by lack of resources. Through our work, we strive to empower individuals and communities to overcome poverty, illiteracy, and disease, and to build a brighter future for themselves and future generations. Our values of compassion, integrity, and collaboration guide us in all that we do, and we are committed to making a meaningful impact in the lives of those we serve."                    </p>
+                </div>
+                <div class="box">
+                    <h2 class="h-secondary center">Our Program</h2>
+                    <p class="justify-content">
+                        We offer a range of programs to support education, food, and healthcare in underserved communities. Our education program provides access to quality education, including formal schooling and vocational training, to children and adults who otherwise would not have the opportunity. Our food program provides nutritious meals and food aid to vulnerable individuals and families, including those affected by natural disasters and conflicts. Our healthcare program offers essential medical care, health education, and disease prevention to those who lack access to these services. Through our programs, we strive to empower individuals and communities to overcome poverty and build a brighter future for themselves.
+
+                    </p>
+                </div>
+                <div class="box">
+                    <h2 class="h-secondary center">Our Team</h2>
+                    <p class="justify-content">
+                        Our team is made up of dedicated professionals and volunteers who are committed to our mission. Our leadership team brings extensive experience in the nonprofit sector and expertise in education, food security, and healthcare. Our program staff includes educators, healthcare providers, and food aid specialists who work tirelessly to ensure that our programs are effective and impactful. We are also fortunate to have a dedicated group of volunteers who contribute their time and skills to support our work. Together, we are united by a shared commitment to improving the lives of those we serve, and we are grateful for the support of our partners and donors who make our work possible.
+
+
+
+                    </p>
+                </div>
+            </div>
+        </section>
+      
+          <section id="gallery">
+            <h1 class="h-primary center">Gallery</h1>
+            <div class="row">
+                <div class="column">
+                  <img src="7.jpg" alt="Snow" style="width:100%" height=300>
+                </div>
+                <div class="column">
+                  <img src="4.jpg" alt="Forest" style="width:100%" height=300>
+                </div>
+                <div class="column">
+                  <img src="12.jpg" alt="Mountains" style="width:100%" height=300>
+                </div>
+              </div>
+          </section>
+      
+          <section id="join-us">
+            <h1 class="h-primary center">Join Us</h1>
+            <div id="contact-box">
+                <form action="">
+                    <div class="form-group">
+                        <label for="name">Name: </label>
+                        <input type="text" name="name" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email: </label>
+                        <input type="email" name="name" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number: </label>
+                        <input type="phone" name="name" id="phone" placeholder="Enter your phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message: </label>
+                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                    </div>
+                </form>
+            </div>
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Copyright &copy; 2023 Donate Now 
+            <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-TDQxIE1V8Wg6Jy3Y7E9L2zMvNUOyUwHRCDLrkNwFhC3JIZ+qOksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script>
+        function handleDonateClick() {
+  // Check if the user is logged in
+  if (isLoggedIn()) {
+    // User is logged in, redirect to the payment gateway
+    window.location.href = 'index.html';
+  } else {
+    // User is not logged in, redirect to the signup page
+    window.location.href = 'signup.html';
+  }
+}
+
+function isLoggedIn() {
+  // Implement your logic to check if the user is logged in
+  // Return true if the user is logged in, false otherwise
+  // Example: return localStorage.getItem('isLoggedIn') === 'true';
+}
+
+      </script>
+    </body>
+  </html>
+  
