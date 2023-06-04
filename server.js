@@ -1,9 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+require('dotenv').config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+const MONGODB_URI = process.env.MONGODB_URI;
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -14,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to MongoDB Atlas
 mongoose
-  .connect('mongodb+srv://tsingla701:Qwerty%40052005@cluster0.fsh50ri.mongodb.net/Cluster0?retryWrites=true&w=majority', {
+  .connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
