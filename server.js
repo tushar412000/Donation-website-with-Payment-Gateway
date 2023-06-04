@@ -6,6 +6,7 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI;
+const STRIPE_LINK = process.env.STRIPE_LINK;
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -59,8 +60,8 @@ app.post('/signup', (req, res) => {
         newUser
           .save()
           .then(() => {
-            // Signup successful, redirect to payment gateway
-            res.redirect('https://buy.stripe.com/test_eVa4gJ8PG48071C5kl');
+            // Signup successful, redirect to Stripe link
+            res.redirect(STRIPE_LINK);
           })
           .catch((error) => {
             res.status(500).send('Error signing up');
@@ -80,8 +81,8 @@ app.post('/login', (req, res) => {
   User.findOne({ email, password })
     .then((user) => {
       if (user) {
-        // Login successful, redirect to payment gateway
-        res.redirect('https://buy.stripe.com/test_eVa4gJ8PG48071C5kl');
+        // Login successful, redirect to Stripe link
+        res.redirect(STRIPE_LINK);
       } else {
         res.status(401).send('Invalid email or password');
       }
