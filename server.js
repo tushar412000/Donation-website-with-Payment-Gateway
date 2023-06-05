@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+require('dotenv').config();
 
 const app = express();
 const PORT = 3000;
@@ -58,7 +59,7 @@ app.post('/signup', (req, res) => {
           .save()
           .then(() => {
             // Signup successful, redirect to payment gateway
-            res.redirect(STRIPE_LINK);
+            res.redirect(process.env.STRIPE_LINK);
           })
           .catch((error) => {
             res.status(500).send('Error signing up');
@@ -79,7 +80,7 @@ app.post('/login', (req, res) => {
     .then((user) => {
       if (user) {
         // Login successful, redirect to payment gateway
-        res.redirect(STRIPE_LINK);
+        res.redirect(process.env.STRIPE_LINK);
       } else {
         res.status(401).send('Invalid email or password');
       }
