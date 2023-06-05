@@ -1,12 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI;
-const STRIPE_LINK = process.env.STRIPE_LINK;
+const PORT = 3000;
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -17,7 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to MongoDB Atlas
 mongoose
-  .connect(MONGODB_URI, {
+  .connect('mongodb+srv://tsingla701:Qwerty%40052005@cluster0.fsh50ri.mongodb.net/Cluster0?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -60,7 +57,7 @@ app.post('/signup', (req, res) => {
         newUser
           .save()
           .then(() => {
-            // Signup successful, redirect to Stripe link
+            // Signup successful, redirect to payment gateway
             res.redirect(STRIPE_LINK);
           })
           .catch((error) => {
@@ -81,7 +78,7 @@ app.post('/login', (req, res) => {
   User.findOne({ email, password })
     .then((user) => {
       if (user) {
-        // Login successful, redirect to Stripe link
+        // Login successful, redirect to payment gateway
         res.redirect(STRIPE_LINK);
       } else {
         res.status(401).send('Invalid email or password');
